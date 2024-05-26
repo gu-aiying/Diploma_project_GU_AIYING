@@ -1,0 +1,91 @@
+// dictionary
+.dictionary {
+    max-width: 400px;
+    height: auto;
+    margin: 150px auto;
+   
+
+    // animation effect
+    .flip {
+        animation: flip .5s forwards ;
+    }
+   
+    // word
+    .word {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px 2px rgba(80, 79, 79, 0.2);
+        
+        perspective: 1000px; 
+        transform-style: preserve-3d;
+        cursor: pointer;
+
+        .front,
+        .back {
+            transition: all .8s ease;
+            backface-visibility: hidden;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            margin: 0;
+
+            display: grid;
+            align-items: center;
+            
+            font: 30px "Lucida Calligraphy", sans-serif;
+            color: rgb(61, 58, 58);
+            text-align: center;
+            word-break: break-word; // 单词换行
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .back {
+            background-color: #eaeaef;
+            transform: rotateX(180deg);
+        }
+
+    }
+
+    // repeat
+    .repeat {
+        width: 100%;
+        padding: 50px 50px 0;
+        display: flex;
+        justify-content: space-around;
+
+        button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            vertical-align: middle;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .sum {
+            font: 14px "Consolas", sans-serif;
+            line-height: 60px;
+        }
+    }
+}
+
+// анимация переворота карточки
+// 从正面到背面
+@keyframes flip {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(180deg);
+    }
+}
+
